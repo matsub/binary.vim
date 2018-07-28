@@ -2,12 +2,11 @@ augroup Binary
     autocmd!
     autocmd BufReadPost * if &binary
                 \| silent %!xxd -g 2
-                \| endif
+                \endif
     autocmd BufWritePre * if &binary
                 \| %!xxd -r
-                \| endif
+                \endif
     autocmd BufWritePost * if &binary
                 \| silent %!xxd -g 2
-                \| set nomod
-                \| endif
+                \endif
 augroup END
